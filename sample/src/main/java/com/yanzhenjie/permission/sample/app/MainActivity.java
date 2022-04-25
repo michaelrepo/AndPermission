@@ -107,22 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public boolean onMenuItemClick(MenuItem item) {
                         int order = item.getItemId();
                         switch (order) {
-                            case 0: {
-                                requestPermission(Permission.READ_CONTACTS);
-                                break;
-                            }
-                            case 1: {
-                                requestPermission(Permission.WRITE_CONTACTS);
-                                break;
-                            }
-                            case 2: {
-                                requestPermission(Permission.GET_ACCOUNTS);
-                                break;
-                            }
-                            case 3: {
-                                requestPermission(Permission.Group.CONTACTS);
-                                break;
-                            }
+
                         }
                         return true;
                     }
@@ -163,18 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public boolean onMenuItemClick(MenuItem item) {
                         int order = item.getOrder();
                         switch (order) {
-                            case 0: {
-                                requestPermission(Permission.READ_CALENDAR);
-                                break;
-                            }
-                            case 1: {
-                                requestPermission(Permission.WRITE_CALENDAR);
-                                break;
-                            }
-                            case 2: {
-                                requestPermission(Permission.Group.CALENDAR);
-                                break;
-                            }
+
                         }
                         return true;
                     }
@@ -227,28 +201,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 requestPermission(Permission.CALL_PHONE);
                                 break;
                             }
-                            case 2: {
-                                requestPermission(Permission.READ_PHONE_NUMBERS);
-                                break;
-                            }
-                            case 3: {
-                                requestPermission(Permission.ANSWER_PHONE_CALLS);
-                                break;
-                            }
-                            case 4: {
-                                requestPermission(Permission.USE_SIP);
-                                break;
-                            }
-                            case 5: {
-                                requestPermission(Permission.ADD_VOICEMAIL);
-                                break;
-                            }
-                            case 6: {
-                                // ADD_VOICEMAIL is special, not shown here.
-                                requestPermission(Permission.READ_PHONE_STATE, Permission.CALL_PHONE, Permission.READ_PHONE_NUMBERS,
-                                    Permission.ANSWER_PHONE_CALLS, Permission.USE_SIP);
-                                break;
-                            }
+
                         }
                         return true;
                     }
@@ -263,22 +216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public boolean onMenuItemClick(MenuItem item) {
                         int order = item.getOrder();
                         switch (order) {
-                            case 0: {
-                                requestPermission(Permission.READ_CALL_LOG);
-                                break;
-                            }
-                            case 1: {
-                                requestPermission(Permission.WRITE_CALL_LOG);
-                                break;
-                            }
-                            case 2: {
-                                requestPermission(Permission.PROCESS_OUTGOING_CALLS);
-                                break;
-                            }
-                            case 3: {
-                                requestPermission(Permission.Group.CALL_LOG);
-                                break;
-                            }
+
                         }
                         return true;
                     }
@@ -287,50 +225,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.btn_request_sensors: {
-                requestPermission(Permission.Group.SENSORS);
                 break;
             }
             case R.id.btn_request_activity_recognition: {
-                requestPermission(Permission.Group.ACTIVITY_RECOGNITION);
                 break;
             }
             case R.id.btn_request_sms: {
-                PopupMenu popupMenu = createMenu(v, getResources().getStringArray(R.array.sms));
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        int order = item.getOrder();
-                        switch (order) {
-                            case 0: {
-                                requestPermission(Permission.SEND_SMS);
-                                break;
-                            }
-                            case 1: {
-                                requestPermission(Permission.RECEIVE_SMS);
-                                break;
-                            }
-                            case 2: {
-                                requestPermission(Permission.READ_SMS);
-                                break;
-                            }
-                            case 3: {
-                                requestPermission(Permission.RECEIVE_WAP_PUSH);
-                                break;
-                            }
-                            case 4: {
-                                requestPermission(Permission.RECEIVE_MMS);
-                                break;
-                            }
-                            case 5: {
-                                requestPermission(Permission.Group.SMS);
-                                break;
-                            }
-                        }
-                        return true;
-                    }
-                });
-                popupMenu.show();
-                break;
+
             }
             case R.id.btn_setting: {
                 setPermission();

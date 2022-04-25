@@ -36,8 +36,6 @@ import java.util.List;
  */
 public class Runtime implements RuntimeOption {
 
-    private static final String ADD_VOICEMAIL_MANIFEST = "android.permission.ADD_VOICEMAIL";
-
     private static final PermissionRequestFactory FACTORY;
     private static List<String> sAppPermissions;
 
@@ -94,9 +92,7 @@ public class Runtime implements RuntimeOption {
     private void checkPermissions(String... permissions) {
         if (sAppPermissions == null) {
             sAppPermissions = new ArrayList<>(getManifestPermissions(mSource.getContext()));
-            if (sAppPermissions.contains(ADD_VOICEMAIL_MANIFEST)) {
-                sAppPermissions.add(Permission.ADD_VOICEMAIL);
-            }
+
         }
 
         if (permissions.length == 0) {

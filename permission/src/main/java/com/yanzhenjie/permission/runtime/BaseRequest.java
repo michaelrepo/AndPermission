@@ -98,13 +98,8 @@ abstract class BaseRequest implements PermissionRequest {
      */
     public static List<String> filterPermissions(List<String> permissions) {
         permissions = new ArrayList<>(new HashSet<>(permissions));
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            permissions.remove(Permission.READ_PHONE_NUMBERS);
-            permissions.remove(Permission.ANSWER_PHONE_CALLS);
-        }
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-            permissions.remove(Permission.ACTIVITY_RECOGNITION);
             permissions.remove(Permission.ACCESS_BACKGROUND_LOCATION);
         }
         return permissions;
